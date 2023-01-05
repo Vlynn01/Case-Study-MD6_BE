@@ -1,11 +1,15 @@
 package com.example.casestudymd6_be.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class DetailUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,5 +32,5 @@ public class DetailUser {
     @ManyToOne
     private Address address;
     @OneToOne
-    User user;
+    Users users;
 }
