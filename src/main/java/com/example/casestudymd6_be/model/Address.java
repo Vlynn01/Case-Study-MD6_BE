@@ -12,5 +12,11 @@ public class Address {
     private long id;
     private String name;
 
+    public Address() {
+    }
 
+    public Address(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

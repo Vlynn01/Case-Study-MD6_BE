@@ -12,4 +12,12 @@ public class TypeOfWork {
     private long id;
 
     private String name;
+
+    public TypeOfWork() {
+    }
+
+    public TypeOfWork(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

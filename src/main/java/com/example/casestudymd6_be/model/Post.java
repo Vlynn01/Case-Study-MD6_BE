@@ -36,5 +36,22 @@ public class Post {
     @OneToOne
     private WorkTime workTime;
 
+    public Post() {
+    }
 
+    public Post(long id, String title, double salary, String level, long experience, String content, String gender, String description, Date expirationDatePost, boolean status, Address address, TypeOfWork typeOfWork, WorkTime workTime) {
+        this.id = id;
+        this.title = title;
+        this.salary = salary;
+        this.level = level;
+        this.experience = experience;
+        this.content = content;
+        this.gender = gender;
+        this.description = description;
+        this.expirationDatePost = expirationDatePost;
+        this.status = status;
+        this.address = address;
+        this.typeOfWork = typeOfWork;
+        this.workTime = workTime;
+    }
 }

@@ -11,4 +11,12 @@ public class WorkTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+
+    public WorkTime() {
+    }
+
+    public WorkTime(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }
