@@ -3,6 +3,8 @@ package com.example.casestudymd6_be.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Time;
 
 @Entity
 @Data
@@ -27,6 +29,9 @@ public class DetailUser {
 
     @ManyToOne
     private Address address;
+    private Time timeRegisterEnterprise;
+
+    private Date dateRegisterEnterprise;
     @OneToOne
-    User user;
+    AppUser appUser;
 }

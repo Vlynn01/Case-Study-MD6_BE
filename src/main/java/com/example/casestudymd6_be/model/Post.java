@@ -31,7 +31,7 @@ public class Post {
     private Address address;
 
     @ManyToOne
-    private TypeOfWork typeOfWork;
+    private Field field;
 
     @OneToOne
     private WorkTime workTime;
