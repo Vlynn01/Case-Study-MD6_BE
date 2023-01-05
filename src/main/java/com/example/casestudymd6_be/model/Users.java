@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -20,5 +20,8 @@ public class User {
 
     @ManyToOne
     private CvUser cvUser;
+
+
+
 
 }
