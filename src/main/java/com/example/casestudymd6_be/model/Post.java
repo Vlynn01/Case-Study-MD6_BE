@@ -18,7 +18,7 @@ public class Post {
 
     private long experience;
 
-    private String content;
+    private String place;
     private String gender;
 
     private String description;
@@ -39,13 +39,13 @@ public class Post {
     public Post() {
     }
 
-    public Post(long id, String title, double salary, String level, long experience, String content, String gender, String description, Date expirationDatePost, boolean status, Address address, TypeOfWork typeOfWork, WorkTime workTime) {
+    public Post(long id, String title, double salary, String level, long experience, String place, String gender, String description, Date expirationDatePost, boolean status, Address address, TypeOfWork typeOfWork, WorkTime workTime) {
         this.id = id;
         this.title = title;
         this.salary = salary;
         this.level = level;
         this.experience = experience;
-        this.content = content;
+        this.place = place;
         this.gender = gender;
         this.description = description;
         this.expirationDatePost = expirationDatePost;

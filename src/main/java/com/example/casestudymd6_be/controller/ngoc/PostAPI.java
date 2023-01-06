@@ -1,6 +1,6 @@
 package com.example.casestudymd6_be.controller.ngoc;
 
-import com.example.casestudymd6_be.service.ngoc.itf.IPostService;
+import com.example.casestudymd6_be.service.dinh.PostService;
 import com.example.casestudymd6_be.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/post")
 public class PostAPI {
 @Autowired
-    IPostService iPostService;
+PostService iPostService;
 
 @GetMapping("listPost")
     public ResponseEntity<List<Post>> findAll(){

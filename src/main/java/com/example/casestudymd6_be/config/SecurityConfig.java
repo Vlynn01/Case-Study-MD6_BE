@@ -1,5 +1,6 @@
 package com.example.casestudymd6_be.config;
 import com.example.casestudymd6_be.config.filter.JwtAuthenticationFilter;
+import com.example.casestudymd6_be.service.dinh.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

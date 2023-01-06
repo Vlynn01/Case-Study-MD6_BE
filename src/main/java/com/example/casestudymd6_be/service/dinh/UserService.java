@@ -1,9 +1,8 @@
 package com.example.casestudymd6_be.service.dinh;
 
-import com.example.casestudymd6_be.repository.dinh.IUserRepo;
 import com.example.casestudymd6_be.model.Roles;
 import com.example.casestudymd6_be.model.Users;
-
+import com.example.casestudymd6_be.repository.dinh.IUserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
