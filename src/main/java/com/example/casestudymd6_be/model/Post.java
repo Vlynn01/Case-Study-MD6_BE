@@ -35,11 +35,13 @@ public class Post {
 
     @OneToOne
     private WorkTime workTime;
+    @ManyToOne
+    private DetailUser detailUser;
 
     public Post() {
     }
 
-    public Post(long id, String title, double salary, String level, long experience, String place, String gender, String description, Date expirationDatePost, boolean status, Address address, TypeOfWork typeOfWork, WorkTime workTime) {
+    public Post(long id, String title, double salary, String level, long experience, String place, String gender, String description, Date expirationDatePost, boolean status, Address address, TypeOfWork typeOfWork, WorkTime workTime, DetailUser detailUser) {
         this.id = id;
         this.title = title;
         this.salary = salary;
@@ -53,5 +55,6 @@ public class Post {
         this.address = address;
         this.typeOfWork = typeOfWork;
         this.workTime = workTime;
+        this.detailUser = detailUser;
     }
 }
