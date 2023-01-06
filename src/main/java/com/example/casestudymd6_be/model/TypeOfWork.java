@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-public class Field {
+public class TypeOfWork {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

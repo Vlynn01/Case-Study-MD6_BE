@@ -2,7 +2,7 @@ package com.example.casestudymd6_be.controller.luan;
 
 import com.example.casestudymd6_be.model.Users;
 import com.example.casestudymd6_be.model.DetailUser;
-import com.example.casestudymd6_be.model.Field;
+import com.example.casestudymd6_be.model.TypeOfWork;
 import com.example.casestudymd6_be.model.Roles;
 import com.example.casestudymd6_be.service.luan.InterfaceService.All.IEnterpriseService;
 import com.example.casestudymd6_be.service.luan.InterfaceService.All.IFieldService;
@@ -38,11 +38,11 @@ public class RegisterAPI {
 //
     }
     @GetMapping("/findAllField")
-    public ResponseEntity<List<Field>> findAllField(){
+    public ResponseEntity<List<TypeOfWork>> findAllField(){
         return new ResponseEntity<>(fieldService.findAll(), HttpStatus.OK);
     }
     @GetMapping("/find/{id}")
-    public ResponseEntity<Field> findById(@PathVariable int id){
+    public ResponseEntity<TypeOfWork> findById(@PathVariable int id){
         return new ResponseEntity<>(fieldService.findById(id),HttpStatus.OK);
     }
     @PostMapping("/enterprise")

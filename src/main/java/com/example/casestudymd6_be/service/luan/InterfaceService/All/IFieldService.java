@@ -1,12 +1,12 @@
 package com.example.casestudymd6_be.service.luan.InterfaceService.All;
 
-import com.example.casestudymd6_be.model.Field;
+import com.example.casestudymd6_be.model.TypeOfWork;
 
 import java.util.List;
 
 public interface IFieldService {
 
-    List<Field> findAll();
+    List<TypeOfWork> findAll();
 
-    Field findById(int id);
+    TypeOfWork findById(int id);
 }
