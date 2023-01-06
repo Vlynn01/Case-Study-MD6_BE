@@ -1,6 +1,8 @@
 package com.example.casestudymd6_be.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -15,6 +17,7 @@ public class DetailUser {
 
     private String email;
 
+
     private String password;
     private String img;
     private long quantity;
@@ -26,6 +29,7 @@ public class DetailUser {
 
     @ManyToOne
     private Address address;
+
     @OneToOne
     Users users;
 

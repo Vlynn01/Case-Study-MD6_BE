@@ -1,11 +1,9 @@
-package com.example.casestudymd6_be.Service.ngoc.impl;
+package com.example.casestudymd6_be.service.ngoc.impl;
 
-import com.example.casestudymd6_be.Repository.ngoc.IPostRepo;
-import com.example.casestudymd6_be.Service.ngoc.itf.IPostService;
+import com.example.casestudymd6_be.repository.ngoc.IPostRepo;
+import com.example.casestudymd6_be.service.ngoc.itf.IPostService;
 import com.example.casestudymd6_be.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

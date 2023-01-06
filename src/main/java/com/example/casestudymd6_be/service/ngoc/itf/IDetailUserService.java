@@ -1,4 +1,4 @@
-package com.example.casestudymd6_be.Service.ngoc.itf;
+package com.example.casestudymd6_be.service.ngoc.itf;
 
 import com.example.casestudymd6_be.model.DetailUser;
 

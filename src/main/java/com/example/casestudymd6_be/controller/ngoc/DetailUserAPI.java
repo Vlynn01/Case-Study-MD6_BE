@@ -1,13 +1,12 @@
 package com.example.casestudymd6_be.controller.ngoc;
 
-import com.example.casestudymd6_be.Service.ngoc.itf.IDetailUserService;
+import com.example.casestudymd6_be.service.ngoc.itf.IDetailUserService;
 import com.example.casestudymd6_be.model.DetailUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

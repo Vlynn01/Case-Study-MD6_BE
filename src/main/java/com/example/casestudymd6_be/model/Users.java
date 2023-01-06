@@ -21,4 +21,7 @@ public class Users {
     @ManyToOne
     private CvUser cvUser;
 
+
+
+
 }

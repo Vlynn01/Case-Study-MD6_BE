@@ -1,6 +1,6 @@
 package com.example.casestudymd6_be.controller.ngoc;
 
-import com.example.casestudymd6_be.Service.ngoc.itf.IPostService;
+import com.example.casestudymd6_be.service.ngoc.itf.IPostService;
 import com.example.casestudymd6_be.model.Post;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ public class PostAPI {
 @Autowired
     IPostService iPostService;
 
-@GetMapping
+@GetMapping("listPost")
     public ResponseEntity<List<Post>> findAll(){
     return new ResponseEntity<>(iPostService.finAll(),HttpStatus.OK);
 }
@@ -28,12 +28,12 @@ public class PostAPI {
     public ResponseEntity<Post> findById(@PathVariable long id){
         return new ResponseEntity<>(iPostService.findById(id), HttpStatus.OK);
     }
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<?> save(@RequestBody Post post){
         iPostService.save(post);
     return new ResponseEntity<>(HttpStatus.OK);
     }
-    @PutMapping
+    @PutMapping("/edit")
     public ResponseEntity<?> edit(@RequestBody Post post) {
         iPostService.save(post);
         return new ResponseEntity<>(HttpStatus.OK);

@@ -1,7 +1,7 @@
-package com.example.casestudymd6_be.Service.ngoc.impl;
+package com.example.casestudymd6_be.service.ngoc.impl;
 
-import com.example.casestudymd6_be.Repository.ngoc.IDetailUserRepo;
-import com.example.casestudymd6_be.Service.ngoc.itf.IDetailUserService;
+import com.example.casestudymd6_be.repository.ngoc.IDetailUserRepo;
+import com.example.casestudymd6_be.service.ngoc.itf.IDetailUserService;
 import com.example.casestudymd6_be.model.DetailUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
