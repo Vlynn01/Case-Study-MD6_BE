@@ -16,7 +16,7 @@ public class ApplyUser {
     private boolean status;
 
     @ManyToOne
-    private AppUser appUser;
+    private Users users;
 
     @ManyToOne
     private Post post;

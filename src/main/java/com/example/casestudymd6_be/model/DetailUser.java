@@ -33,5 +33,5 @@ public class DetailUser {
 
     private Date dateRegisterEnterprise;
     @OneToOne
-    AppUser appUser;
+    Users users;
 }

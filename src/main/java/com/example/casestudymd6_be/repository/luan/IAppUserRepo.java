@@ -1,6 +1,6 @@
 package com.example.casestudymd6_be.repository.luan;
 
-import com.example.casestudymd6_be.model.AppUser;
+import com.example.casestudymd6_be.model.Users;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -8,8 +8,8 @@ import org.springframework.data.repository.query.Param;
 
 import javax.transaction.Transactional;
 
-public interface IAppUserRepo extends CrudRepository<AppUser, Long> {
-    AppUser findByUsername(String username);
+public interface IAppUserRepo extends CrudRepository<Users, Long> {
+    Users findByUsername(String username);
 
 
     // ĐỔi mật khẩu

@@ -1,6 +1,6 @@
 package com.example.casestudymd6_be.controller.luan;
 
-import com.example.casestudymd6_be.model.AppUser;
+import com.example.casestudymd6_be.model.Users;
 import com.example.casestudymd6_be.model.DetailUser;
 import com.example.casestudymd6_be.model.Field;
 import com.example.casestudymd6_be.model.Roles;
@@ -30,11 +30,11 @@ public class RegisterAPI {
     IFieldService fieldService;
 
     @PostMapping("/user")
-    public ResponseEntity<AppUser> register(@RequestBody AppUser appUser){
+    public ResponseEntity<Users> register(@RequestBody Users users){
         Roles roles = new Roles();
         roles.setId(3);
-        appUser.setRoles(roles);
-        return new ResponseEntity<>(appUserService.save(appUser), HttpStatus.OK);
+        users.setRoles(roles);
+        return new ResponseEntity<>(appUserService.save(users), HttpStatus.OK);
 //
     }
     @GetMapping("/findAllField")
@@ -62,7 +62,7 @@ public class RegisterAPI {
     }
     //
     @GetMapping("/checkUser")
-    public ResponseEntity<List<AppUser>> findAllUser(){
+    public ResponseEntity<List<Users>> findAllUser(){
         return new ResponseEntity<>(appUserService.getAll(), HttpStatus.OK);
     }
 }

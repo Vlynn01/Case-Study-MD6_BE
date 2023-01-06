@@ -1,6 +1,6 @@
 package com.example.casestudymd6_be.controller.luan;
 
-import com.example.casestudymd6_be.model.AppUser;
+import com.example.casestudymd6_be.model.Users;
 import com.example.casestudymd6_be.model.ChangePassWord;
 import com.example.casestudymd6_be.model.luan.ot.UserToken;
 import com.example.casestudymd6_be.service.JwtService;
@@ -28,25 +28,25 @@ public class LoginAPI {
     @Autowired
     IEnterpriseService enterpriseService;
     @PostMapping("/login")
-    public UserToken login(@RequestBody AppUser appUser){
+    public UserToken login(@RequestBody Users users){
         try{
             // Tạo ra 1 đối tượng Authentication.
             Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(appUser.getUsername(), appUser.getPassword()));
+                    new UsernamePasswordAuthenticationToken(users.getUsername(), users.getPassword()));
             SecurityContextHolder.getContext().setAuthentication(authentication);
             String token = jwtService.createToken(authentication);
-            AppUser appUser1 = appUserService.findByUserName(appUser.getUsername());
-            return new UserToken(appUser1.getId(),appUser1.getUsername(),token, appUser1.getRoles());
+            Users users1 = appUserService.findByUserName(users.getUsername());
+            return new UserToken(users1.getId(), users1.getUsername(),token, users1.getRoles());
         }catch (Exception e) {
             return null;
         }
     }
     @GetMapping("/findByName/{name}")
-    public ResponseEntity<AppUser> findByUserName(@PathVariable String name){
+    public ResponseEntity<Users> findByUserName(@PathVariable String name){
         return new ResponseEntity<>(appUserService.findByUserName(name),HttpStatus.OK);
     }
     @PostMapping("/changePassword")
-    public ResponseEntity<AppUser> changePassword(@RequestBody ChangePassWord changePassWord ) {
+    public ResponseEntity<Users> changePassword(@RequestBody ChangePassWord changePassWord ) {
         enterpriseService.changPassword(changePassWord.getGmail(), changePassWord.getPassword());
         return new ResponseEntity<>(HttpStatus.OK);
     }

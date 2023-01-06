@@ -1,6 +1,6 @@
 package com.example.casestudymd6_be.service.luan.impl;
 
-import com.example.casestudymd6_be.model.AppUser;
+import com.example.casestudymd6_be.model.Users;
 import com.example.casestudymd6_be.repository.luan.IAppUserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,7 +10,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -21,18 +20,18 @@ public class AppUserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        AppUser appUser = iAppUserRepo.findByUsername(username);
-        return new User(appUser.getUsername(), appUser.getPassword(), Collections.singleton((GrantedAuthority) appUser.getRoles()));
+        Users users = iAppUserRepo.findByUsername(username);
+        return new User(users.getUsername(), users.getPassword(), Collections.singleton((GrantedAuthority) users.getRoles()));
     }
-    public List<AppUser> getAll(){
-        return (List<AppUser>) iAppUserRepo.findAll();
+    public List<Users> getAll(){
+        return (List<Users>) iAppUserRepo.findAll();
     }
 
-    public AppUser findByUserName(String username){
+    public Users findByUserName(String username){
         return  iAppUserRepo.findByUsername(username);
     }
-    public AppUser save(AppUser appUser){
-        return iAppUserRepo.save(appUser);
+    public Users save(Users users){
+        return iAppUserRepo.save(users);
     }
 
 
