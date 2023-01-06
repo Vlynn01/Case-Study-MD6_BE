@@ -28,7 +28,7 @@ public class LoginAPI {
     @Autowired
     IEnterpriseService enterpriseService;
     @PostMapping("/login")
-    public UserToken login(@RequestBody Users users){
+    public ResponseEntity<UserToken> login(@RequestBody Users users){
         try{
             // Tạo ra 1 đối tượng Authentication.
             Authentication authentication = authenticationManager.authenticate(
@@ -36,7 +36,8 @@ public class LoginAPI {
             SecurityContextHolder.getContext().setAuthentication(authentication);
             String token = jwtService.createToken(authentication);
             Users users1 = appUserService.findByUserName(users.getUsername());
-            return new UserToken(users1.getId(), users1.getUsername(),token, users1.getRoles());
+            UserToken userToken= new UserToken(users1.getId(), users1.getUsername(),token, users1.getRoles());
+            return new ResponseEntity<>(userToken,HttpStatus.OK);
         }catch (Exception e) {
             return null;
         }

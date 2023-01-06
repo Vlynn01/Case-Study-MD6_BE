@@ -43,7 +43,7 @@ public class SendMailService {
     public boolean sendMail(String toMail,String subject,String content){
         SimpleMailMessage message =new SimpleMailMessage();
 //         chinh mail
-        message.setFrom("ducnguyenbvtvc@gmail.com");
+        message.setFrom("ycicc00@gmail.com");
         message.setTo(toMail);
         message.setSubject(subject);
         message.setText(content+createCode());
