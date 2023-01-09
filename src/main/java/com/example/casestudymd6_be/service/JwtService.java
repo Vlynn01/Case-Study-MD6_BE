@@ -1,4 +1,6 @@
 package com.example.casestudymd6_be.service;
+
+import com.example.casestudymd6_be.service.luan.impl.AppUserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,8 @@ import java.util.Date;
 @Service
 // sẽ tạo ra token.
 public class JwtService {
-
+    @Autowired
+    AppUserService appUserService;
     // key để mã hóa token.
     private static final String KEY_Private = "abc12345674";
     // thời gian để token sống.

@@ -1,6 +1,8 @@
 package com.example.casestudymd6_be.config;
+
+
 import com.example.casestudymd6_be.config.filter.JwtAuthenticationFilter;
-import com.example.casestudymd6_be.service.dinh.UserService;
+import com.example.casestudymd6_be.service.luan.impl.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,13 +15,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
-import com.example.casestudymd6_be.service.dinh.UserService;
-
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    UserService userService;
+    AppUserService appUserService;
 
     @Autowired
     JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -40,10 +40,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().configurationSource(request -> new CorsConfiguration().applyPermitDefaultValues());
     }
 
-
-    // xác thực
+    // xắc thực
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService).passwordEncoder(NoOpPasswordEncoder.getInstance());
+        auth.userDetailsService(appUserService).passwordEncoder(NoOpPasswordEncoder.getInstance());
     }
 }

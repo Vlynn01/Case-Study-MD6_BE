@@ -1,6 +1,7 @@
 package com.example.casestudymd6_be.config.filter;
+
 import com.example.casestudymd6_be.service.JwtService;
-import com.example.casestudymd6_be.service.dinh.UserService;
+import com.example.casestudymd6_be.service.luan.impl.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -21,7 +22,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private JwtService jwtService;
 
     @Autowired
-    com.example.casestudymd6_be.service.dinh.UserService userService;
+    private AppUserService userService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
@@ -42,6 +43,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         } catch (Exception e) {
             logger.error("Can NOT set user authentication -> Message: {}", e);
         }
+
         filterChain.doFilter(request, response);
     }
 

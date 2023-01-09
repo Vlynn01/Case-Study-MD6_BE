@@ -3,6 +3,8 @@ package com.example.casestudymd6_be.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.sql.Time;
 
 @Entity
 @Data
@@ -16,6 +18,7 @@ public class DetailUser {
     private String email;
 
     private String password;
+
     private String img;
     private long quantity;
     private String place;
@@ -25,26 +28,10 @@ public class DetailUser {
     private String city;
 
     @ManyToOne
-    private com.example.casestudymd6_be.model.address address;
+    private Address address;
+    private Time timeRegisterEnterprise;
 
+    private Date dateRegisterEnterprise;
     @OneToOne
     Users users;
-
-    public DetailUser() {
-    }
-
-    public DetailUser(long id, String name, String email, String password, String img, long quantity, String place, long phone, String website, String city, com.example.casestudymd6_be.model.address address, Users users) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.img = img;
-        this.quantity = quantity;
-        this.place = place;
-        this.phone = phone;
-        this.website = website;
-        this.city = city;
-        this.address = address;
-        this.users = users;
-    }
 }
