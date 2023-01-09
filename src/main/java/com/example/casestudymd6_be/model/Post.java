@@ -22,7 +22,7 @@ public class Post {
 
     private long experience;
 
-    private String content;
+    private String place;
     private String gender;
 
     private String description;
