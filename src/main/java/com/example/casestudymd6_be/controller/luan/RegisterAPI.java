@@ -30,39 +30,43 @@ public class RegisterAPI {
     IFieldService fieldService;
 
     @PostMapping("/user")
-    public ResponseEntity<Users> register(@RequestBody Users users){
+    public ResponseEntity<Users> register(@RequestBody Users users) {
         Roles roles = new Roles();
         roles.setId(3);
         users.setRoles(roles);
         return new ResponseEntity<>(appUserService.save(users), HttpStatus.OK);
 //
     }
+
     @GetMapping("/findAllField")
-    public ResponseEntity<List<TypeOfWork>> findAllField(){
+    public ResponseEntity<List<TypeOfWork>> findAllField() {
         return new ResponseEntity<>(fieldService.findAll(), HttpStatus.OK);
     }
+
     @GetMapping("/find/{id}")
-    public ResponseEntity<TypeOfWork> findById(@PathVariable int id){
-        return new ResponseEntity<>(fieldService.findById(id),HttpStatus.OK);
+    public ResponseEntity<TypeOfWork> findById(@PathVariable int id) {
+        return new ResponseEntity<>(fieldService.findById(id), HttpStatus.OK);
     }
+
     @PostMapping("/enterprise")
-    public ResponseEntity<DetailUser> registerEnterprise(@RequestBody DetailUser detailUser){
+    public ResponseEntity<DetailUser> registerEnterprise(@RequestBody DetailUser detailUser) {
         detailUser.setTimeRegisterEnterprise(Time.valueOf(java.time.LocalTime.now()));
-        long millis=System.currentTimeMillis();
-        java.sql.Date date=new java.sql.Date(millis);
+        long millis = System.currentTimeMillis();
+        java.sql.Date date = new java.sql.Date(millis);
         detailUser.setDateRegisterEnterprise(date);
         enterpriseService.save(detailUser);
-        return  new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-    //    @GetMapping("/enterprise")
-//
+
+    //
     @GetMapping("/checkEnterprise")
-    public ResponseEntity<List<DetailUser>> findAllEnterprise(){
+    public ResponseEntity<List<DetailUser>> findAllEnterprise() {
         return new ResponseEntity<>(enterpriseService.getAllEnterprise(), HttpStatus.OK);
     }
+
     //
     @GetMapping("/checkUser")
-    public ResponseEntity<List<Users>> findAllUser(){
+    public ResponseEntity<List<Users>> findAllUser() {
         return new ResponseEntity<>(appUserService.getAll(), HttpStatus.OK);
     }
 }

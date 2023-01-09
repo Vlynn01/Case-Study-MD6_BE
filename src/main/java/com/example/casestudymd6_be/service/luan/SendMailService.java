@@ -1,4 +1,4 @@
-package com.example.casestudymd6_be.service.luan.impl;
+package com.example.casestudymd6_be.service.luan;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;

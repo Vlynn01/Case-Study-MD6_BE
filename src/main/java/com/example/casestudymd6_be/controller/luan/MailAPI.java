@@ -1,7 +1,7 @@
 package com.example.casestudymd6_be.controller.luan;
 
 import com.example.casestudymd6_be.model.Users;
-import com.example.casestudymd6_be.service.luan.impl.SendMailService;
+import com.example.casestudymd6_be.service.luan.SendMailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
