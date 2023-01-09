@@ -22,7 +22,6 @@ public class ApplyUser {
     @ManyToOne
     private Users users;
 
-
     @ManyToOne
     private Post post;
 }

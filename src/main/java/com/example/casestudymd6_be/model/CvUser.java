@@ -21,6 +21,8 @@ public class CvUser {
     private String mail;
 
     private String imgCV;
+
     private long phoneNumber;
+
 
 }
