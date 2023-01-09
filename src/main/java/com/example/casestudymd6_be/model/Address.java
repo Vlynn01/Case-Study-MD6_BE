@@ -9,18 +9,17 @@ import javax.persistence.*;
 @Entity
 @Data
 
-
-public class address {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
 
-    public address() {
+    public Address() {
     }
 
-    public address(long id, String name) {
+    public Address(long id, String name) {
         this.id = id;
         this.name = name;
     }
