@@ -28,7 +28,7 @@ public class Post {
     private boolean status;
 
     @ManyToOne
-    private Address address;
+    private com.example.casestudymd6_be.model.address address;
 
     @ManyToOne
     private TypeOfWork typeOfWork;
@@ -41,7 +41,7 @@ public class Post {
     public Post() {
     }
 
-    public Post(long id, String title, double salary, String level, long experience, String place, String gender, String description, Date expirationDatePost, boolean status, Address address, TypeOfWork typeOfWork, WorkTime workTime, DetailUser detailUser) {
+    public Post(long id, String title, double salary, String level, long experience, String place, String gender, String description, Date expirationDatePost, boolean status, com.example.casestudymd6_be.model.address address, TypeOfWork typeOfWork, WorkTime workTime, DetailUser detailUser) {
         this.id = id;
         this.title = title;
         this.salary = salary;
